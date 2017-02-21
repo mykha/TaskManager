@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      users: Пользователь
+    attributes:
+      user:
+        Name: "ФИО"
+        email: "Адрес эл. почты"
+        user_foto: "Ссылка на рисунок (jpg/png/gif)"

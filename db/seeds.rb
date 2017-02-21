@@ -7,19 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
-User.create!(Name: 'Иванов И.И.', email: 'ivanov_ii@TaskManager.com')
+User.create!(Name: 'Иванов И.И.',
+             email: 'ivanov_ii@TaskManager.com',
+             user_foto:   'user1.png')
 # . . .
-User.create!(Name: 'Федоров А.Ф.',
-             email: 'fedorov_af@TaskManager.com')
+User.create!(Name: 'Фкдоров А.Ф.',
+             email: 'fedorov_af@TaskManager.com',
+             user_foto:   'user2.png')
 
 # . . .
-User.create!(Name: 'Кузькин К.В.',
-             email: 'kuzkin_kv@TaskManager.com')
+User.create!(Name: 'Сидоров А.А.',
+             email: 'sidorov_aa@TaskManager.com',
+             user_foto:   'user3.png')
 # . . .
-User.create!(Name: 'Фоменко Д.В.',
-             email: 'fomenko_dv@TaskManager.com')
+User.create!(Name: 'Гвоздев И.Е.',
+             email: 'gvozdev_ie@TaskManager.com',
+             user_foto:   'user4.png')
 # . . .
-User.create!(Name: 'Одминов С.С.',
-             email: 'admin@TaskManager.com')
+User.create!(Name: 'Ласточкина Н.Г.',
+             email: 'lastochakina_ng@TaskManager.com',
+             user_foto:   'user5.png')
 
 
