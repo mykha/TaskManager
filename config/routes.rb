@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'todolist/index'
+
   resources :tasks
   resources :projects
   resources :users
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root to: 'todolist#index', as: 'todolist'
+
+  post 'tasks/:project_id/new' => 'tasks#new', as:'new_task_project'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

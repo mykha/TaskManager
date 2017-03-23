@@ -27,5 +27,11 @@ User.create!(Name: 'Гвоздев И.Е.',
 User.create!(Name: 'Ласточкина Н.Г.',
              email: 'lastochakina_ng@TaskManager.com',
              user_foto:   'user5.png')
+Project.delete_all
+Task.delete_all
+project1 = Project.create(name: 'Робот Вертер')
+Task.create!(name: 'Встретить Колю', project: project1)
+Task.create!(name: 'Защитить Колю от пиратов', project: project1)
+Project.create!(name: 'Алиса Селезнева')
 
 

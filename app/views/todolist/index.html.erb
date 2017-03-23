@@ -1,0 +1,58 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<h1>To Do List</h1>
+<p></p>
+<p></p>
+<h2>New Project <%= link_to new_project_path  do %>
+              <i class="material-icons button add_box md-36">add_box</i>
+              <% end %>
+</h2>
+
+<% @projects.each do |project|%>
+    <table>
+      <thead>
+      <tr>
+        <th colspan="6"><%=project.name%>
+        </th>
+        <th>
+          <%= link_to  project, method: :delete, data: { confirm: 'Are you sure?' } do%>
+          <i class = "material-icons button delete_forever md-36" data_title="Delete project" >delete_forever</i>
+          <%end%>
+        </th>
+      </tr>
+      <tr>
+        <th>#</th>
+        <th >Name</th>
+        <th >Status</th>
+        <th >User</th>
+        <th >Priority</th>
+        <th ></th>
+        <th > <%= link_to new_task_project_path(project.id), :method => :post do%>
+              <i class="material-icons button add md-36">add</i>
+          <% end %></th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <%@todohash[project].each do |task|%>
+      <tr>
+        <td><%=task.id%></td>
+        <td><%=task.name%></td>
+        <td><%=task.status%></td>
+        <td><%=task.user%></td>
+        <td><%=task.priority%></td>
+        <td>
+          <%=link_to edit_task_path(task) do%><i class="material-icons button edit">edit</i><%end%>
+        </td>
+        <td>
+          <%=link_to(content_tag(:i, 'delete', class: "material-icons button delete"),
+                      task, data: { confirm: "Are you sure?" },
+                      method: :delete)%>
+        </td>
+      </tr>
+      <%end%>
+      </tbody>
+    </table>
+
+<% end %>
+
