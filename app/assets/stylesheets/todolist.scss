@@ -12,6 +12,10 @@
   h1{
     text-align: center;
   }
+  h2{
+    text-align: left;
+    line-height: 3
+  }
 
   table {
     text-align: left;
@@ -79,44 +83,38 @@
   .delete_forever:hover {
     color: #fffdf4;
   }
-  /*i:hover::after {
-    content: attr(data-title); /* Выводим текст */
-  /*  position: relative; /* Абсолютное позиционирование */
-    /*left: 0; right: 0; bottom: 5px;*/
-    /*left: 20%; top: 30%; /* Положение подсказки */
-  /*  z-index: 1; /* Отображаем подсказку поверх других элементов */
-  /* background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
-  /*  font-family: Arial, sans-serif; /* Гарнитура шрифта */
-  /*  font-size: 11px; /* Размер текста подсказки */
-  /*  padding: 5px 10px; /* Поля */
-  /*  border: 1px solid #333; /* Параметры рамки */
- /* }*/
-
-  i:hover::after{
+  .podskazka{
+    display: inline;
+    position: relative;
+  }
+  .podskazka:hover:after{
     background: #333;
-    background: rgba(129, 22, 37, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
-    content: attr(data_title);
+    content: attr(_title);
     left: 20%;
     padding: 5px 15px;
     position: absolute;
     z-index: 98;
     width: auto;
+    font-size: 8pt;
+    font-weight: normal;
+    line-height: 1;
   }
-  /*i:hover::before{ /* Добавляем стрелочку внизу блока всплывающей подсказки */
-    /*border: solid;
-    border-color: #811625 transparent;
+  .podskazka:hover:before{ /* Добавляем стрелочку внизу блока всплывающей подсказки */
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.7) transparent;
     border-width: 6px 6px 0 6px;
     bottom: 20px;
     content: "";
     left: 50%;
-    position: relative;
+    position: absolute;
     z-index: 99;
-  }*/
+  }
 
-
+  a:link { text-decoration: none; }
   a:hover {
     background-color: transparent; /* Прозрачный цвет ссылки при наведении на нее курсора мыши */
     text-decoration: none; /* Убираем подчеркивание */

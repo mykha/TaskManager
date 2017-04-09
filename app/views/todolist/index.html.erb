@@ -1,10 +1,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <h1>To Do List</h1>
-<p></p>
-<p></p>
-<h2>New Project <%= link_to new_project_path  do %>
-              <i class="material-icons button add_box md-36">add_box</i>
+
+<h2>New Project <%= link_to new_project_path, :class=> :podskazka, :_title=> "Add Project" do %>
+              <i class="material-icons button add_box md-36" >add_box</i>
               <% end %>
 </h2>
 
@@ -12,11 +11,14 @@
     <table>
       <thead>
       <tr>
-        <th colspan="6"><%=project.name%>
+        <th colspan="5"><%=project.name%>
         </th>
         <th>
-          <%= link_to  project, method: :delete, data: { confirm: 'Are you sure?' } do%>
-          <i class = "material-icons button delete_forever md-36" data_title="Delete project" >delete_forever</i>
+          <%= link_to  project, method: :delete, data: { confirm: 'Are you sure?' } , :class=> :podskazka, :_title=>"Delete project" do%>
+          <i class = "material-icons button delete_forever md-36"  >delete_forever</i>
+          <%end%>
+          <%= link_to  edit_project_path(project), :class=> :podskazka, :_title=>"Edit project" do%>
+              <i class = "material-icons button edit md-48"  >edit</i>
           <%end%>
         </th>
       </tr>
@@ -26,11 +28,9 @@
         <th >Status</th>
         <th >User</th>
         <th >Priority</th>
-        <th ></th>
-        <th > <%= link_to new_task_project_path(project.id), :method => :post do%>
-              <i class="material-icons button add md-36">add</i>
+        <th > <%= link_to new_task_project_path(project.id), :method => :post, :class=> :podskazka, :_title=> "Add Task" do%>
+              <i class="material-icons button add md-36" >add</i>
           <% end %></th>
-
       </tr>
       </thead>
       <tbody>
@@ -42,11 +42,9 @@
         <td><%=task.user%></td>
         <td><%=task.priority%></td>
         <td>
-          <%=link_to edit_task_path(task) do%><i class="material-icons button edit">edit</i><%end%>
-        </td>
-        <td>
+          <%=link_to edit_task_path(task), :class=> :podskazka, :_title=> "Edit Task" do%><i class="material-icons button edit" >edit</i><%end%>
           <%=link_to(content_tag(:i, 'delete', class: "material-icons button delete"),
-                      task, data: { confirm: "Are you sure?" },
+                      task, data: { confirm: "Are you sure?" }, :class=> :podskazka, :_title=> "Delete Task",
                       method: :delete)%>
         </td>
       </tr>
